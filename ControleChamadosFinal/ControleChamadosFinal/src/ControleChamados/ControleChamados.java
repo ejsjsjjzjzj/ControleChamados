@@ -19,6 +19,22 @@ public class ControleChamados {
         // 4. Atribuindo o Técnico (Regra: Muda o status para EM_ATENDIMENTO)
         chamado.atribuirTecnico(tecnico);
         System.out.println("Técnico atribuído! Novo status: " + chamado.getStatus());
+        // Segundo técnico tenta assumir o chamado que já está em atendimento
+Tecnico tecnico2 = new Tecnico(
+        2L,
+        "João Suporte",
+        "joao@email.com",
+        "(11) 91234-5678",
+        "Redes e Infraestrutura",
+        LocalDate.now()
+);
+
+try {
+    chamado.atribuirTecnico(tecnico2);
+} catch (IllegalStateException e) {
+    System.out.println("Segundo tecnico tentou assumir o chamado.");
+    System.out.println("Acesso negado: chamado ja esta sendo atendido por outro tecnico.");
+}
 
         // 5. Tentando encerrar sem atendimento (Deve disparar a regra de negócio que impede o encerramento)
         try {
