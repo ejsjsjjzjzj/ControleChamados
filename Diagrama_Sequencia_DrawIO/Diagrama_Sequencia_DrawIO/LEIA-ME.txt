@@ -1,0 +1,4 @@
+Arquivo pronto para abrir no draw.io / diagrams.net.
+Abra: Diagrama_Sequencia_Controle_Chamados.drawio
+O diagrama contém Cliente, Sistema de Chamados, Chamado, Técnico e Atendimento,
+com os fragmentos UML opt, alt e loop dentro de quadrados.
